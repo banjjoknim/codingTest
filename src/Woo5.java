@@ -9,107 +9,91 @@
 //제한 사항을 벗어나는 경우 -1 return.
 
 public class Woo5 {
-	//  재고가 레시피보다 적을때 구매, 재고 추가
+    //  재고가 레시피보다 적을때 구매, 재고 추가
 
-	public int[] solution(String[] history) {
+    public int[] solution(String[] history) {
 
-		int[] answer = new int[history.length];
+        int[] answer = new int[history.length];
 
-		int porkFeet = 5;
-		int onion = 100;
-		int greenOnion = 10;
-		int garlic = 5;
-		int pepper = 2;
-		int porkFeetPrice = 10000; // 10
-		int onionPrice = 3000; // 100
-		int greenOnionPrice = 1000; // 30
-		int garlicPrice = 2000; // 50
-		int pepperPrice = 1000; // 10
-		int requiredPorkFeet = 4;
-		int requiredOnion = 50;
-		int requiredGreenOnion = 10;
-		int requiredGarlic = 10;
-		int requiredPepper = 4;
+        int porkFeet = 5;
+        int onion = 100;
+        int greenOnion = 10;
+        int garlic = 5;
+        int pepper = 2;
+        int porkFeetPrice = 10000; // 10
+        int onionPrice = 3000; // 100
+        int greenOnionPrice = 1000; // 30
+        int garlicPrice = 2000; // 50
+        int pepperPrice = 1000; // 10
+        int requiredPorkFeet = 4;
+        int requiredOnion = 50;
+        int requiredGreenOnion = 10;
+        int requiredGarlic = 10;
+        int requiredPepper = 4;
 
-		boolean check = false;
-		for (int i = 0; i < history.length; i++) {
-			int amount = 0;
-			if (Integer.parseInt((history[i].replace("\"", "").replace("[", "").replace("]", "").split("\\.")[1])) == 0
-				|| Integer.parseInt((history[i].replace("\"", "").replace("[", "").replace("]", "").split("\\.")[1]))
-				== 5) {
-				check = true;
-			} else {
-				check = false;
-				return new int[] {-1};
-			}
-			if (Integer.parseInt((history[i].replace("\"", "").replace("[", "").replace("]", "").split("\\.")[0])) == 1
-				|| Integer.parseInt((history[i].replace("\"", "").replace("[", "").replace("]", "").split("\\.")[0]))
-				== 2) {
-				check = true;
-			} else {
-				check = false;
-				return new int[] {-1};
-			}
-			//            if (!history[i].split("\\.")[0]
-			//                .equals("1")/* || history[i].split("\\.")[0].equals("2")
-			//                            || history[i].split("\\.")[1].equals("5") || history[i].split("\\.")[1].equals("0")*/) {
-			//                return new int[] {-1};
-			//            }
-			if (porkFeet < requiredPorkFeet * Double.parseDouble(history[i])) {
-				porkFeet = porkFeet + 10 - (int)(requiredPorkFeet * Double.parseDouble(history[i]));
-				amount = amount + porkFeetPrice;
-			} else {
-				porkFeet = porkFeet - (int)(requiredPorkFeet * Double.parseDouble(history[i]));
-			}
+        for (int i = 0; i < history.length; i++) {
+            int amount = 0;
+            if (Integer.parseInt((history[i].split("\\.")[1])) == 0
+                || Integer.parseInt((history[i].split("\\.")[1])) == 5) {
+            } else {
+                return new int[] {-1};
+            }
+            if (Integer.parseInt((history[i].split("\\.")[0])) == 1
+                || Integer.parseInt((history[i].split("\\.")[0])) == 2) {
+            } else {
+                return new int[] {-1};
+            }
 
-			if (onion < requiredOnion * Double.parseDouble(history[i])) {
-				onion = onion + 100 - (int)(requiredOnion * Double.parseDouble(history[i]));
-				amount = amount + onionPrice;
-			} else {
-				onion = onion - (int)(requiredOnion * Double.parseDouble(history[i]));
-			}
+            while (porkFeet < requiredPorkFeet * Double.parseDouble(history[i])) {
+                porkFeet = porkFeet + 10;
+                amount = amount + porkFeetPrice;
+            }
+            porkFeet = porkFeet - (int)(requiredPorkFeet * Double.parseDouble(history[i]));
 
-			if (greenOnion < requiredGreenOnion * Double.parseDouble(history[i])) {
-				greenOnion = greenOnion + 30 - (int)(requiredGreenOnion * Double.parseDouble(history[i]));
-				amount = amount + greenOnionPrice;
-			} else {
-				greenOnion = greenOnion - (int)(requiredGreenOnion * Double.parseDouble(history[i]));
-			}
+            while (onion < requiredOnion * Double.parseDouble(history[i])) {
+                onion = onion + 100;
+                amount = amount + onionPrice;
+            }
+            onion = onion - (int)(requiredOnion * Double.parseDouble(history[i]));
 
-			if (garlic < requiredGarlic * Double.parseDouble(history[i])) {
-				garlic = garlic + 50 - (int)(requiredGarlic * Double.parseDouble(history[i]));
-				amount = amount + garlicPrice;
-			} else {
-				garlic = garlic + 50 - (int)(requiredGarlic * Double.parseDouble(history[i]));
-			}
+            while (greenOnion < requiredGreenOnion * Double.parseDouble(history[i])) {
+                greenOnion = greenOnion + 30;
+                amount = amount + greenOnionPrice;
+            }
+            greenOnion = greenOnion - (int)(requiredGreenOnion * Double.parseDouble(history[i]));
 
-			if (Integer.parseInt((history[i].replace("\"", "").split("\\.")[1])) == 5) {
-				requiredPepper = 2;
-			}
+            while (garlic < requiredGarlic * Double.parseDouble(history[i])) {
+                garlic = garlic + 50;
+                amount = amount + garlicPrice;
+            }
+            garlic = garlic - (int)(requiredGarlic * Double.parseDouble(history[i]));
 
-			if (pepper < requiredPepper * Double.parseDouble(history[i])) {
-				pepper = pepper + 10 - (int)(requiredPepper * Double.parseDouble(history[i]));
-				amount = amount + pepperPrice;
-			} else {
-				pepper = pepper - (int)(requiredPepper * Double.parseDouble(history[i]));
-			}
+            if (Integer.parseInt((history[i].split("\\.")[1])) == 5) {
+                requiredPepper = 2;
+            } else {
+                requiredPepper = 4;
+            }
 
-			answer[i] = amount;
-		}
+            while (pepper < (int)(requiredPepper * Double.parseDouble(history[i]))) {
+                pepper = pepper + 10;
+                amount = amount + pepperPrice;
+            }
+            pepper = pepper - (int)(requiredPepper * Double.parseDouble(history[i]));
 
-		return answer;
+            answer[i] = amount;
+        }
 
-	}
+        return answer;
 
-	public static void main(String[] args) {
-		int[] answer = {};
-		Woo5 woo5 = new Woo5();
-		String[] history = new String[] {
-			"[1.0, 1.0, 2.0, 2.0, 1.0, 1.0, 2.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 2.0, 1.0, 2.0]"};
-		answer = woo5.solution(history);
-		for (int i = 0; i < answer.length; i++) {
-			System.out.print(" " + answer[i]);
-		}
+    }
 
-	}
+    public static void main(String[] args) {
+        Woo5 woo5 = new Woo5();
+        String[] history = new String[] {"1.5", "2.0", "1.0"};
+        int[] answer = woo5.solution(history);
+        for (int i = 0; i < history.length; i++) {
+            System.out.print(answer[i] + " ");
+        }
+    }
+
 }
