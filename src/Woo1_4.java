@@ -37,7 +37,6 @@ public class Woo1_4 {
             if (Integer.compare(addPage, multiPage) <= 0 && multiPage >= pobiScore) {
                 pobiScore = multiPage;
             }
-            System.out.println("pobi : " + pobiScore);
 
         }
 
@@ -69,7 +68,6 @@ public class Woo1_4 {
             if (Integer.compare(addPage, multiPage) <= 0 && multiPage >= crongScore) {
                 crongScore = multiPage;
             }
-            System.out.println("crong : " + crongScore);
 
         }
         if (pobiScore == crongScore) {
@@ -89,7 +87,7 @@ public class Woo1_4 {
     }
 
     public static void main(String[] args) {
-        int[] pobi = new int[] {97, 98,};
+        int[] pobi = new int[] {97, 98};
         int[] crong = new int[] {197, 198};
         Woo1_4 woo1_4 = new Woo1_4();
         int result = woo1_4.solution(pobi, crong);
