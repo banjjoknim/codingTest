@@ -14,11 +14,11 @@ public class Woo1_7 {
 
         for (int i = 0; i < list.size() - 1; i++) {
             while (list.size() != 0 && list.get(i).compareTo(list.get(i + 1)) == 0) {
-                if (list.get(i).equals(list.get(i + 1))) {
-                    list.remove(i);
-                    list.remove(i);
-                    i = 0;
-                }
+                // if (list.get(i).equals(list.get(i + 1))) {
+                list.remove(i);
+                list.remove(i);
+                i = 0;
+                // }
             }
         }
 
@@ -30,8 +30,8 @@ public class Woo1_7 {
 
     public static void main(String[] args) {
         Woo1_7 woo1_7 = new Woo1_7();
-        woo1_7.solution("zyelleyz");
-        woo1_7.solution("browoanoommnaon");
+        System.out.println(woo1_7.solution("zyelleyz"));
+        System.out.println(woo1_7.solution("browoanoommnaon"));
 
     }
 }
