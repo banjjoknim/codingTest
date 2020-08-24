@@ -1,3 +1,5 @@
+package w1;
+
 public class Woo1_5 {
     //0시 55분 시작. 01시 15분 완료.
     public int solution(int number) {

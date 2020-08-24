@@ -1,8 +1,12 @@
+package w1Test;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import com.sun.istack.internal.Nullable;
+
+import w1.Woo1_7;
 
 class Woo1_7Test {
 

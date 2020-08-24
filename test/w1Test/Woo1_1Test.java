@@ -1,6 +1,10 @@
+package w1Test;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import w1.Woo1_1;
 
 class Woo1_1Test {
 

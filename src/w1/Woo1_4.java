@@ -1,3 +1,5 @@
+package w1;
+
 public class Woo1_4 {
     // 23시 40분 시작. 00시 15분 완료.
 

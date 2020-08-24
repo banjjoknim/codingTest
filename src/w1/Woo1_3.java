@@ -1,3 +1,5 @@
+package w1;
+
 public class Woo1_3 {
     // 02시 01분 시작. 03시 24분까지 못 품.
     // 21시 55분 시작. 22시 33분 완료.
@@ -39,6 +41,6 @@ public class Woo1_3 {
     public static void main(String[] args) {
         Woo1_3 woo1_3 = new Woo1_3();
         System.out.println(woo1_3.solution("I love you"));
-        
+
     }
 }
