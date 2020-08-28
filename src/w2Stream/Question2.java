@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-public class Woo2_2Stream {
+public class Question2 {
 
     // 시간 측정 실패
     public int[] solution(String logs) {

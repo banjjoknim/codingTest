@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Woo2_3Stream {
+public class Question3 {
     public int solution(int[] prices, int[] discounts) {
         List<Integer> priceList = Arrays.stream(prices)
             .boxed()

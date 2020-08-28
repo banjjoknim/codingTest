@@ -2,7 +2,7 @@ package w2Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import w2.Woo6;
 
