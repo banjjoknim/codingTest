@@ -1,7 +1,11 @@
 package w2Stream;
 
+import java.util.Arrays;
+import java.util.function.Predicate;
+
 //02시 23분 시작. 03시 18분 완료.
 public class Question5 {
+
     public int[] solution(String[] history) {
         int[] answer = new int[history.length];
         final int pigFootPrice = 10000;
@@ -16,18 +20,19 @@ public class Question5 {
         int garlic = 5;
         int pepper = 2;
 
-        for (int i = 0; i < history.length; i++) {
-            if (!history[i].split("\\.")[0].equals("1")) {
-                if (!history[i].split("\\.")[0].equals("2")) {
-                    return new int[] {-1};
-                }
-            }
+        Predicate<String> checkEquals1 = s -> s.split("\\.")[0].equals("1");
+        Predicate<String> checkEquals2 = s -> s.split("\\.")[0].equals("2");
+        Predicate<String> checkEquals0 = s -> s.split("\\.")[1].equals("0");
+        Predicate<String> checkEquals5 = s -> s.split("\\.")[1].equals("5");
 
-            if (!history[i].split("\\.")[1].equals("0")) {
-                if (!history[i].split("\\.")[1].equals("5")) {
-                    return new int[] {-1};
-                }
-            }
+        if (Arrays.stream(history).anyMatch(eatAmount -> checkFirstNumber(eatAmount))) {
+            return new int[] {-1};
+        }
+        if (Arrays.stream(history).anyMatch(eatAmount -> checkSecondNumber(eatAmount))) {
+            return new int[] {-1};
+        }
+
+        for (int i = 0; i < history.length; i++) {
 
             int price = 0;
             int requiredPigFoot = (int)(4 * Double.parseDouble(history[i]));
@@ -35,7 +40,8 @@ public class Question5 {
             int requiredGreenOnion = (int)(10 * Double.parseDouble(history[i]));
             int requiredGarlic = (int)(10 * Double.parseDouble(history[i]));
             int requiredPepper = (int)(4 * Double.parseDouble(history[i]));
-            if (history[i].split("\\.")[1].equals("5")) {
+
+            if (checkEquals5.test(history[i])) {
                 requiredPepper = requiredPepper / 2;
             }
             while (pigFoot < requiredPigFoot) {
@@ -72,6 +78,24 @@ public class Question5 {
 
         return answer;
 
+    }
+
+    public boolean checkSecondNumber(String history) {
+        if (!history.split("\\.")[1].equals("0")) {
+            if (!history.split("\\.")[1].equals("5")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkFirstNumber(String history) {
+        if (!history.split("\\.")[0].equals("1")) {
+            if (!history.split("\\.")[0].equals("2")) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

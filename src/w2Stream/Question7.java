@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 // 12시 33분 시작. 01시 10분 실패
@@ -50,9 +49,8 @@ public class Question7 {
         recommandList.removeAll(friendList);
         Collections.sort(recommandList, Collections.reverseOrder());
         answer = recommandList.stream()
-            .map(item -> item.getName())
-            .collect(Collectors.toList())
-            .toArray(new String[recommandList.size()]);
+            .map(Person::getName)
+            .toArray(String[]::new);
         return answer;
     }
 
@@ -85,10 +83,9 @@ public class Question7 {
         IntStream.range(0, friends.length)
             .mapToObj(index -> friends[index])
             .filter(array -> Arrays.asList(array).contains(user))
-            .forEach(
-                array -> Arrays.stream(array)
-                    .filter(name -> !name.equals(user))
-                    .forEach(name -> friendList.add(name)));
+            .forEach(array -> Arrays.stream(array)
+                .filter(name -> !name.equals(user))
+                .forEach(name -> friendList.add(name)));
     }
 
 }

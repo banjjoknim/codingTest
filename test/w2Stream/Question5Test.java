@@ -20,8 +20,6 @@ class Question5Test {
             .mapToInt((item -> Integer.parseInt(item))).toArray();
 
         Question5 question5 = new Question5();
-        Arrays.stream(question5.solution(history)).forEach(System.out::print);
-        System.out.println();
         Assertions.assertArrayEquals(question5.solution(history), answer);
     }
 }

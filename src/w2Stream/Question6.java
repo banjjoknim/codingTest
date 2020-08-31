@@ -51,7 +51,8 @@ public class Question6 {
     }
 
     private void getSubstringList(String[] form, List<String> list) {
-        IntStream.range(0, form[1].length() - 1).forEach(index -> list.add(form[1].substring(index, index + 2)));
+        IntStream.range(0, form[1].length() - 1)
+            .forEach(index -> list.add(form[1].substring(index, index + 2)));
     }
 
 }
