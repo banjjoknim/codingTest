@@ -7,7 +7,7 @@ class Q5Test {
 
     @Test
     void test() {
-        int number = 40;
+        int number = 13;
         int answer = 4;
         Q5 q5 = new Q5();
         Assertions.assertEquals(q5.solution(number), answer);

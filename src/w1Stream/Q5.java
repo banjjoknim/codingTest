@@ -1,18 +1,17 @@
 package w1Stream;
 
+import java.util.stream.IntStream;
+
 // 04시 06분 시작 04시 21분 완료.
 public class Q5 {
     public int solution(int number) {
-        int answer = 0;
-        for (int i = 1; i < number; i++) {
-            for (int j = 0; j < String.valueOf(i).length(); j++) {
-                if (Integer.parseInt(Character.toString(String.valueOf(i).charAt(j))) % 3 == 0
-                    && Integer.parseInt(Character.toString(String.valueOf(i).charAt(j))) != 0) {
-                    answer += 1;
-                    System.out.println(i);
-                }
-            }
-        }
+        int answer = IntStream.range(1, number + 1)
+            .map(numberInStream -> (int)IntStream.range(0, String.valueOf(numberInStream).length())
+                .filter(
+                    index -> Integer.parseInt(Character.toString(String.valueOf(numberInStream).charAt(index))) % 3 == 0
+                        && Integer.parseInt(Character.toString(String.valueOf(numberInStream).charAt(index))) != 0)
+                .count())
+            .sum();
         return answer;
     }
 }

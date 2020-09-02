@@ -14,7 +14,6 @@ class Q1Test {
         Q1 q1 = new Q1();
         int money = Integer.parseInt(input);
         int[] answer = Arrays.stream(expected.split(",")).mapToInt(Integer::parseInt).toArray();
-        Arrays.stream(answer).forEach(System.out::print);
         Assertions.assertArrayEquals(q1.solution(money), answer);
     }
 

@@ -14,10 +14,9 @@ public class Q6 {
         String[] answer = {};
         List<String> list = new ArrayList<String>();
         for (int i = 0; i < logs.length; i++) {
-            boolean requestCheck;
             if (logs[i].contains("request")) {
                 int now = i;
-                requestCheck = IntStream.range(0, now)
+                boolean requestCheck = IntStream.range(0, now)
                     .filter(index -> logs[index].contains("request"))
                     .noneMatch(index -> diffSecondsLowerThan60(logs[now], logs[index]));
                 if (requestCheck) {

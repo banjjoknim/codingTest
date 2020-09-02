@@ -1,6 +1,7 @@
 package w1Stream;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 // 03시 28분 시작 04시 05분 완료.
 public class Q4 {
@@ -18,35 +19,34 @@ public class Q4 {
         if (pobi[1] - pobi[0] != 1 || crong[1] - crong[0] != 1) {
             return -1;
         }
-        for (int i = 0; i < pobi.length; i++) {
-            int add = 0;
-            int multiple = 1;
-            for (int j = 0; j < String.valueOf(pobi[i]).length(); j++) {
-                add += Integer.parseInt(Character.toString(String.valueOf(pobi[i]).charAt(j)));
-                multiple = multiple * Integer.parseInt(Character.toString(String.valueOf(pobi[i]).charAt(j)));
-            }
-            if (multiple >= add && multiple >= pobiScore) {
-                pobiScore = multiple;
-            }
-            if (multiple < add && add >= pobiScore) {
-                pobiScore = add;
-            }
-        }
 
-        for (int i = 0; i < crong.length; i++) {
-            int add = 0;
-            int multiple = 1;
-            for (int j = 0; j < String.valueOf(crong[i]).length(); j++) {
-                add += Integer.parseInt(Character.toString(String.valueOf(crong[i]).charAt(j)));
-                multiple = multiple * Integer.parseInt(Character.toString(String.valueOf(crong[i]).charAt(j)));
+        for (int i = 0; i < 2; i++) {
+            int pageSide = i;
+            int addPobi = IntStream.range(0, String.valueOf(pobi[i]).length())
+                .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
+                .sum();
+            int multiplePobi = IntStream.range(0, String.valueOf(pobi[i]).length())
+                .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
+                .reduce(1, (a, b) -> a * b);
+            if (multiplePobi >= addPobi && multiplePobi >= pobiScore) {
+                pobiScore = multiplePobi;
             }
-            if (multiple >= add && multiple >= crongScore) {
-                crongScore = multiple;
-            }
-            if (multiple < add && add >= crongScore) {
-                crongScore = add;
+            if (multiplePobi < addPobi && addPobi >= pobiScore) {
+                pobiScore = addPobi;
             }
 
+            int addCrong = IntStream.range(0, String.valueOf(pobi[i]).length())
+                .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
+                .sum();
+            int multipleCrong = IntStream.range(0, String.valueOf(pobi[i]).length())
+                .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
+                .reduce(1, (a, b) -> a * b);
+            if (multipleCrong >= addCrong && multipleCrong >= crongScore) {
+                crongScore = multipleCrong;
+            }
+            if (multipleCrong < addCrong && addCrong >= crongScore) {
+                crongScore = addCrong;
+            }
         }
 
         if (pobiScore > crongScore) {
