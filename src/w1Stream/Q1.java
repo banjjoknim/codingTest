@@ -6,11 +6,7 @@ public class Q1 {
         int[] answer = new int[9];
         int[] division = new int[] {50000, 10000, 5000, 1000, 500, 100, 50, 10, 1};
         for (int i = 0; i < division.length; i++) {
-            if (money >= division[i]) {
-                answer[i] = money / division[i];
-            } else {
-                answer[i] = 0;
-            }
+            answer[i] = money / division[i];
             money = money % division[i];
         }
         return answer;
