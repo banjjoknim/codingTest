@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 // 위장
-// 결국 풀이 봤음.
+// 11시 48분 시작. 12시 07분 중지. 결국 풀이 봤음.
 public class Spy {
     public int solution(String[][] clothes) {
         int answer = 1;
