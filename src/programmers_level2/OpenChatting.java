@@ -1,10 +1,6 @@
 package programmers_level2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // 오픈채팅방
 // 22시 53분 시작.

@@ -1,11 +1,11 @@
 package programmers_level2;
 
-import static java.util.stream.Collectors.*;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 // 위장
 // 11시 48분 시작. 12시 07분 중지. 결국 풀이 봤음.

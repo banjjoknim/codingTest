@@ -1,7 +1,6 @@
 package programmers_level2;
 
 import java.util.HashSet;
-import java.util.Set;
 
 // 소수 찾기
 // 답 없음. 3시간 넘게 걸림. 완전탐색 알고리즘에 대해 공부할 것.

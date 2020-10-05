@@ -1,10 +1,5 @@
 package programmers_level2;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 // 문자열 압축
 // 16시 2분 시작.
 public class StringCompression {
