@@ -1,5 +1,7 @@
 package programmers_level2;
 
+import java.util.Stack;
+
 // 큰 수 만들기
 // 풀이 보고 풀었음.
 // 1. 인덱스 0부터 큰 숫자 선택,
@@ -35,10 +37,49 @@ public class MakeBigNumber {
         return stringBuilder.toString();
     }
 
+    public String solution2(String number, int k) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int index = 0;
+        int max = 0;
+        for (int i = 0; i < number.length() - k; i++) {
+            max = 0;
+            for (int j = index; j <= k + i; j++) {
+                if (number.charAt(j) - '0' > max) {
+                    max = number.charAt(j) - '0';
+                    index = j + 1;
+                }
+            }
+            stringBuilder.append(max);
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public String solution3(String number, int k) {
+        Stack<Character> stack = new Stack<>();
+        char[] answer = new char[number.length() - k];
+
+        for (int i = 0; i < number.length(); i++) {
+            char c = number.charAt(i);
+            while (!stack.isEmpty() && stack.peek() < c && k > 0) {
+                stack.pop();
+                k--;
+            }
+            stack.push(c);
+        }
+
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = stack.get(i);
+        }
+
+        return new String(answer);
+    }
+
     public static void main(String[] args) {
-        String number = "1921";
-        int k = 2;
+        String number = "4177252841";
+        int k = 4;
         MakeBigNumber makeBigNumber = new MakeBigNumber();
         System.out.println(makeBigNumber.solution(number, k));
+        System.out.println(makeBigNumber.solution3(number, k));
     }
 }
