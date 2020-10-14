@@ -7,8 +7,12 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 // 그룹 단어 체커
+// 리뷰완료
 // 1. 단어 입력
 // 2. 그룹 단어 유무 판단
+// 2-1. 포함된 알파벳 확인
+// 2-2. 알파벳별로 위치 확인
+// 2-3. 알파벳별 위치 확인시 자리수가 1씩 차이나지 않으면 false
 // 3. 그룹 단어 갯수 확인
 public class backJoon1316 {
     public static void main(String[] args) {

@@ -3,6 +3,7 @@ package BackJoon;
 import java.util.Scanner;
 
 // 대회 or 인턴
+// 리뷰완료
 // 01시 25분 시작. 01시 33분 완료.
 // 1. 여학생 2명 남학생 1명으로 구성된 최대 팀의 수 구하기
 // 2. 여학생과 남학생의 비율 계산, 팀이 되지 못하는 수 구하기
@@ -23,14 +24,15 @@ public class backJoon2875 {
         if (femaleDivision < male) {
             teamCount = femaleDivision;
         }
-        int totalPeople = female + male;
-        int remainPeople = totalPeople - teamCount * 3;
+        // int totalPeople = female + male;
+        // int remainPeople = totalPeople - teamCount * 3;
 
-        int remainIntern = intern - remainPeople;
-        while (remainIntern > 0) {
-            remainIntern = remainIntern - 3;
-            teamCount--;
-        }
+        // int remainIntern = intern - remainPeople;
+        // while (remainIntern > 0) {
+        //     remainIntern = remainIntern - 3;
+        //     teamCount--;
+        // }
+        teamCount = teamCount - (int) Math.ceil((double) intern / 3);
 
         System.out.println(teamCount);
     }
