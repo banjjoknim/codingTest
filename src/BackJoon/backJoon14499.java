@@ -5,6 +5,16 @@ import java.util.Scanner;
 // 주사위 굴리기
 // 풀이 참조하여 풀었음. 약간의 순서차이.
 public class backJoon14499 {
+    private static int n;
+    private static int m;
+    private static int x;
+    private static int y;
+    private static int k;
+    private static int[][] map;
+    private static int[] dir;
+    private static int[] dx = {0, 0, -1, 1};    // 동서북남
+    private static int[] dy = {1, -1, 0, 0};
+
     static class Dice {
         private int top;
         private int bottom;
@@ -58,16 +68,6 @@ public class backJoon14499 {
             System.out.println(top);
         }
     }
-
-    private static int n;
-    private static int m;
-    private static int x;
-    private static int y;
-    private static int k;
-    private static int[][] map;
-    private static int[] dir;
-    private static int[] dx = {0, 0, -1, 1};    // 동서북남
-    private static int[] dy = {1, -1, 0, 0};
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
