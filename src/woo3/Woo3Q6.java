@@ -35,20 +35,20 @@ public class Woo3Q6 {
             }
             for (Student anotherStudent : studentList) {
                 if (!student.equals(anotherStudent) && student.problemAndScore.equals(anotherStudent.problemAndScore)
-                    && !answer.contains(
-                    student.number)) {
+                        && !answer.contains(
+                        student.number)) {
                     answer.add(student.number);
                 }
             }
         }
 
         if (answer.isEmpty()) {
-            return new String[] {"None"};
+            return new String[]{"None"};
         }
 
         return answer.stream()
-            .sorted()
-            .toArray(String[]::new);
+                .sorted()
+                .toArray(String[]::new);
     }
 
     static class Student {
@@ -62,10 +62,10 @@ public class Woo3Q6 {
     }
 
     public static void main(String[] args) {
-        String[] logs = new String[] {"1901 1 100", "1901 2 100", "1901 4 100", "1901 7 100", "1901 8 100",
-            "1902 2 100", "1902 1 100", "1902 7 100", "1902 4 100", "1902 8 100", "1903 8 100", "1903 7 100",
-            "1903 4 100", "1903 2 100", "1903 1 100", "2001 1 100", "2001 2 100", "2001 4 100", "2001 7 95",
-            "2001 9 100", "2002 1 95", "2002 2 100", "2002 4 100", "2002 7 100", "2002 9 100"};
+        String[] logs = new String[]{"1901 1 100", "1901 2 100", "1901 4 100", "1901 7 100", "1901 8 100",
+                "1902 2 100", "1902 1 100", "1902 7 100", "1902 4 100", "1902 8 100", "1903 8 100", "1903 7 100",
+                "1903 4 100", "1903 2 100", "1903 1 100", "2001 1 100", "2001 2 100", "2001 4 100", "2001 7 95",
+                "2001 9 100", "2002 1 95", "2002 2 100", "2002 4 100", "2002 7 100", "2002 9 100"};
         Woo3Q6 woo3Q6 = new Woo3Q6();
         System.out.println(Arrays.toString(woo3Q6.solution(logs)));
         // Map<Integer, Integer> map1 = new HashMap<>();

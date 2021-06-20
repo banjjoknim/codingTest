@@ -10,7 +10,7 @@ import java.util.*;
 public class Coupang_Q3 {
     public int solution(int k, int[] score) {
         int[] temp = new int[score.length];
-        int[] diff = new int[score.length-1];
+        int[] diff = new int[score.length - 1];
         Set<Integer> hacked = new HashSet<>();
 
         for (int i = 0; i < score.length - 1; i++) {
@@ -29,7 +29,7 @@ public class Coupang_Q3 {
             }
         }
 
-        if(hacked.isEmpty()){
+        if (hacked.isEmpty()) {
             return 0;
         }
 

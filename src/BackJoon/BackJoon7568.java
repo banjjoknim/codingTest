@@ -29,7 +29,7 @@ public class BackJoon7568 {
         return s1.tall < s2.tall;
     }
 
-    private static boolean isHeavier(Student s1, Student s2){
+    private static boolean isHeavier(Student s1, Student s2) {
         return s1.weight < s2.weight;
     }
 

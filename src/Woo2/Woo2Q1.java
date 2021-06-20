@@ -6,7 +6,7 @@ public class Woo2Q1 {
         int answer = 0;
         for (int i = 0; i < riders.length; i++) {
             if (Math.pow(restaurant[0] - riders[i][0], 2) + Math.pow(restaurant[1] - riders[i][1], 2) <= Math.pow(k,
-                2)) {
+                    2)) {
                 answer++;
             }
         }

@@ -11,8 +11,8 @@ public class SquareStars {
         int b = sc.nextInt();
         for (int i = 0; i < b; i++) {
             IntStream.range(0, a)
-                .mapToObj(index -> "*")
-                .forEach(System.out::print);
+                    .mapToObj(index -> "*")
+                    .forEach(System.out::print);
             System.out.println();
         }
     }

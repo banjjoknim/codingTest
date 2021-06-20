@@ -11,8 +11,8 @@ class Question7Test {
         String[] answer = {"andole", "jun", "bedi"};
         String user = "mrko";
         String[][] friends = {{"donut", "andole"}, {"donut", "jun"}, {"donut", "mrko"}, {"shakevan", "andole"},
-            {"shakevan", "jun"},
-            {"shakevan", "mrko"}};
+                {"shakevan", "jun"},
+                {"shakevan", "mrko"}};
         String[] visitors = {"bedi", "bedi", "donut", "bedi", "shakevan"};
         Assertions.assertArrayEquals(question7.solution(user, friends, visitors), answer);
 

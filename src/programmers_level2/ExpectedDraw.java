@@ -8,7 +8,7 @@ public class ExpectedDraw {
 
         while (true) {
             // 참가 번호가 1, 2 인경우 리턴
-            if (Math.max(a,b) % 2 == 0 && Math.max(a, b) - Math.min(a, b) == 1) {
+            if (Math.max(a, b) % 2 == 0 && Math.max(a, b) - Math.min(a, b) == 1) {
                 return answer;
             }
             a = getNextNumber(a);

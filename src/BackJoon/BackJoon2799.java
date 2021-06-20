@@ -34,6 +34,6 @@ public class BackJoon2799 {
             i = i + 4;
         }
         Arrays.stream(answer)
-            .forEach(num -> System.out.print(num + " "));
+                .forEach(num -> System.out.print(num + " "));
     }
 }

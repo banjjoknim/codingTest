@@ -62,7 +62,7 @@ public class CreatePrimeNumber {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[] {1, 2, 3, 4};
+        int[] nums = new int[]{1, 2, 3, 4};
         CreatePrimeNumber createPrimeNumber = new CreatePrimeNumber();
         System.out.println(createPrimeNumber.solution(nums));
     }

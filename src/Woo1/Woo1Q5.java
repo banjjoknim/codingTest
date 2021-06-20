@@ -6,8 +6,8 @@ import java.util.stream.IntStream;
 public class Woo1Q5 {
     public int solution(int number) {
         return IntStream.rangeClosed(1, number)
-            .map(Woo1Q5::calculate)
-            .sum();
+                .map(Woo1Q5::calculate)
+                .sum();
     }
 
     private static int calculate(int number) {

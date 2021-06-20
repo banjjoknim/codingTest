@@ -9,9 +9,9 @@ import java.util.stream.IntStream;
 public class Woo1Q2 {
     public boolean solution(int[][] lands, int[][] wells, int[] point) {
         boolean aboutLands = Arrays.stream(lands)
-            .allMatch(land -> isNotOverlap(land, point));
+                .allMatch(land -> isNotOverlap(land, point));
         boolean aboutWells = Arrays.stream(wells)
-            .anyMatch(well -> !isNotOverlap(well, point));
+                .anyMatch(well -> !isNotOverlap(well, point));
 
         if (aboutLands && aboutWells) {
             return true;
@@ -21,33 +21,33 @@ public class Woo1Q2 {
 
     private static boolean isNotOverlap(int[] position, int[] point) {
         List<Integer> positionX = IntStream.range(0, position.length)
-            .filter(index -> index != 1 && index != 3)
-            .map(index -> position[index])
-            .sorted()
-            .boxed()
-            .collect(Collectors.toList());
+                .filter(index -> index != 1 && index != 3)
+                .map(index -> position[index])
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
         List<Integer> positionY = IntStream.range(0, position.length)
-            .filter(index -> index != 0 && index != 2)
-            .map(index -> position[index])
-            .sorted()
-            .boxed()
-            .collect(Collectors.toList());
+                .filter(index -> index != 0 && index != 2)
+                .map(index -> position[index])
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
 
         List<Integer> pointX = IntStream.range(0, point.length)
-            .filter(index -> index != 1 && index != 3)
-            .map(index -> point[index])
-            .sorted()
-            .boxed()
-            .collect(Collectors.toList());
+                .filter(index -> index != 1 && index != 3)
+                .map(index -> point[index])
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
         List<Integer> pointY = IntStream.range(0, point.length)
-            .filter(index -> index != 0 && index != 2)
-            .map(index -> point[index])
-            .sorted()
-            .boxed()
-            .collect(Collectors.toList());
+                .filter(index -> index != 0 && index != 2)
+                .map(index -> point[index])
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
 
         return (positionX.get(1) <= pointX.get(0) || pointX.get(1) <= positionX.get(0)) ||
-            ((positionY.get(1) <= pointY.get(0) || pointY.get(1) <= positionY.get(0)));
+                ((positionY.get(1) <= pointY.get(0) || pointY.get(1) <= positionY.get(0)));
     }
 
     public static void main(String[] args) {

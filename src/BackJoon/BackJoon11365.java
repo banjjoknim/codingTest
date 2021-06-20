@@ -12,7 +12,7 @@ public class BackJoon11365 {
         while (true) {
             String text = br.readLine();
             if ("END".equals(text)) {
-                 break;
+                break;
             }
             StringBuilder sb = new StringBuilder(text);
             sb.reverse();

@@ -31,6 +31,7 @@ public class Dev_Q2 {
 
     public static void main(String[] args) throws ParseException {
         Dev_Q2 dev_q2 = new Dev_Q2();
-        System.out.println(dev_q2.solution("PM 01:00:00", 10));;
+        System.out.println(dev_q2.solution("PM 01:00:00", 10));
+        ;
     }
 }

@@ -12,7 +12,7 @@ public class backJoon14503 {
         int positionY = sc.nextInt();
         int positionX = sc.nextInt();
         int direction = sc.nextInt();
-        int[] position = new int[] {positionX, positionY};
+        int[] position = new int[]{positionX, positionY};
         RobotCleaner robotCleaner = new RobotCleaner(position, direction);
 
         int[][] space = new int[height][width];

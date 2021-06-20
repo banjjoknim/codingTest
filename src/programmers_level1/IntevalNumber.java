@@ -6,7 +6,7 @@ import java.util.stream.LongStream;
 public class IntevalNumber {
     public long[] solution(int x, int n) {
         return LongStream.rangeClosed(1, n)
-            .map(index -> x * index)
-            .toArray();
+                .map(index -> x * index)
+                .toArray();
     }
 }

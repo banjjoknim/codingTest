@@ -14,16 +14,16 @@ public class Compression {
 
         //인덱스 초기 셋팅
         ArrayList<String> index = new ArrayList<>(Arrays.asList(
-            new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
-                "T", "U", "V"
-                , "W", "X", "Y", "Z"}));
+                new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
+                        "T", "U", "V"
+                        , "W", "X", "Y", "Z"}));
 
         //길이가 하나라면, 인덱스에서 해당 위치를 찾아서 반환
         if (msg.length() == 1) {
 
             int i = index.indexOf(msg);
 
-            return new int[] {i + 1};
+            return new int[]{i + 1};
         }
 
         //결과를 담을 리스트. 사이즈가 가변이기 때문에 리스트로 선언
@@ -97,8 +97,8 @@ public class Compression {
             answer.add(words.get(sb.toString()));
         }
         return answer.stream()
-            .mapToInt(Integer::intValue)
-            .toArray();
+                .mapToInt(Integer::intValue)
+                .toArray();
     }
 
     public static void main(String[] args) {

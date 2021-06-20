@@ -15,12 +15,12 @@ class Question6Test {
         Question6 question6 = new Question6();
         String[] answer;
         if (expected.length() == 2) {
-            answer = new String[] {};
+            answer = new String[]{};
         } else {
             answer = expected.replace("[", "").replace("]", "").replaceAll("\"", "").split(", ");
         }
         String[] form = input.replace("[[", "").replace("]]", "").replaceAll("\"", "")
-            .split("], \\[");
+                .split("], \\[");
         String[][] forms = new String[form.length][];
         IntStream.range(0, forms.length).forEach(index -> forms[index] = form[index].split(", "));
         Assertions.assertArrayEquals(question6.solution(forms), answer);

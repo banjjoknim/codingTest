@@ -11,8 +11,8 @@ public class BackJoon1913 {
 
         int n = sc.nextInt();
         int[][] numbers = new int[n][];
-        for (int i = 1; i <= Math.pow(n,2); i++) {
-            numbers[(n/2)+i-1][(n/2)+i-1] = i;
+        for (int i = 1; i <= Math.pow(n, 2); i++) {
+            numbers[(n / 2) + i - 1][(n / 2) + i - 1] = i;
         }
 
     }

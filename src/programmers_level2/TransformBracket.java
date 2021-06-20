@@ -4,7 +4,7 @@ package programmers_level2;
 // 10시 36분 시작. 11시 40분 완료.
 public class TransformBracket {
     public String solution(String p) {
-        if(checkCorrectBracket(p)){
+        if (checkCorrectBracket(p)) {
             return p;
         }
         return getBrackets(p);

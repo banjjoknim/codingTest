@@ -25,9 +25,9 @@ public class Woo2Q6 {
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
             int count = (int) Arrays.stream(forms)
-                .map(form -> form[1])
-                .filter(nickName -> nickName.contains(word))
-                .count();
+                    .map(form -> form[1])
+                    .filter(nickName -> nickName.contains(word))
+                    .count();
             if (count > 1) {
                 overlap.add(word);
             }
@@ -38,26 +38,26 @@ public class Woo2Q6 {
         while (iterator.hasNext()) {
             String word = iterator.next();
             IntStream.range(0, forms.length)
-                .mapToObj(index -> forms[index])
-                .filter(form -> form[1].contains(word))
-                .forEach(form -> answer.add(form[0]));
+                    .mapToObj(index -> forms[index])
+                    .filter(form -> form[1].contains(word))
+                    .forEach(form -> answer.add(form[0]));
         }
 
         return answer.stream()
-            .sorted(new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
-                    return o1.split("@")[0].compareTo(o2.split("@")[0]);
-                }
-            })
-            .distinct()
-            .toArray(String[]::new);
+                .sorted(new Comparator<String>() {
+                    @Override
+                    public int compare(String o1, String o2) {
+                        return o1.split("@")[0].compareTo(o2.split("@")[0]);
+                    }
+                })
+                .distinct()
+                .toArray(String[]::new);
     }
 
     public static void main(String[] args) {
         String[][] forms = {{"jm@email.com", "제이엠"}, {"jason@email.com", "제이슨"}, {"woniee@email.com", "워니"},
-            {"mj@email.com", "엠제이"}, {
-            "nowm@email.com", "이제엠"}};
+                {"mj@email.com", "엠제이"}, {
+                "nowm@email.com", "이제엠"}};
 
         Woo2Q6 woo2Q6 = new Woo2Q6();
         System.out.println(Arrays.toString(woo2Q6.solution(forms)));

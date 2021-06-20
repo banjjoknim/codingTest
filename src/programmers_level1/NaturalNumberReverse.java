@@ -8,7 +8,7 @@ public class NaturalNumberReverse {
         StringBuilder stringBuilder = new StringBuilder(String.valueOf(n));
         stringBuilder.reverse();
         return Arrays.stream(String.valueOf(stringBuilder).split(""))
-            .mapToInt(Integer::parseInt)
-            .toArray();
+                .mapToInt(Integer::parseInt)
+                .toArray();
     }
 }

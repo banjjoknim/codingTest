@@ -35,7 +35,7 @@ public class BackJoon2563 {
         int answer = 0;
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 100; j++) {
-                if(papers[i][j]){
+                if (papers[i][j]) {
                     answer++;
                 }
             }

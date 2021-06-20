@@ -45,15 +45,15 @@ public class BackJoon1268 {
         }
 
         int max = studentList.stream()
-            .mapToInt(student -> student.sameClassCount)
-            .max()
-            .getAsInt();
+                .mapToInt(student -> student.sameClassCount)
+                .max()
+                .getAsInt();
 
         int answer = studentList.stream()
-            .filter(student -> student.sameClassCount == max)
-            .mapToInt(student -> student.number)
-            .min()
-            .getAsInt();
+                .filter(student -> student.sameClassCount == max)
+                .mapToInt(student -> student.number)
+                .min()
+                .getAsInt();
 
         System.out.println(answer);
         // studentList.sort(Student::getSameClassCount);

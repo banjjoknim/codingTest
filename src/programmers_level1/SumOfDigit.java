@@ -13,12 +13,12 @@ public class SumOfDigit {
         // return answer;
 
         return Arrays.stream(String.valueOf(n).split(""))
-            .mapToInt(number -> Integer.valueOf(number))
-            .sum();
+                .mapToInt(number -> Integer.valueOf(number))
+                .sum();
 
         // return Arrays.stream(String.valueOf(n).split(""))
         //     .mapToInt(Integer::parseInt)
         //     .sum();
-        
+
     }
 }

@@ -55,7 +55,7 @@ public class Question4 {
     }
 
     private void loginCheck(String[] infos, String[] actions, boolean[] answer, boolean[] loginCheck,
-        Predicate<String> login, int index) {
+                            Predicate<String> login, int index) {
         if (loginCheck[0] == false) {
             if (Arrays.stream(infos).anyMatch(info -> actions[index].contains(info))) {
                 answer[index] = true;

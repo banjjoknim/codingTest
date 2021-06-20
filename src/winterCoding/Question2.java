@@ -27,7 +27,7 @@ public class Question2 {
 
     private String rotationBack(String encrypted_text, int rotation) {
         List<String> keyStr = Arrays.stream(encrypted_text.split(""))
-            .collect(Collectors.toList());
+                .collect(Collectors.toList());
         if (rotation > 0) {
             for (int i = 0; i < Math.abs(rotation); i++) {
                 keyStr.add(keyStr.remove(0));

@@ -30,8 +30,8 @@ public class backJoon1316 {
 
     private static boolean check(String word) {
         List<String> list = Arrays.stream(word.split(""))
-            .distinct()
-            .collect(Collectors.toList());
+                .distinct()
+                .collect(Collectors.toList());
         for (int i = 0; i < list.size(); i++) {
             List<Integer> indexs = new ArrayList<>();
             String alphabet = list.get(i);

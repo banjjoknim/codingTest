@@ -23,7 +23,7 @@ public class Woo1Q6 {
             Calendar nowTime = Calendar.getInstance();
             nowTime.setTime(sdf.parse(logs[i].split(" ")[2]));
             if ("request".equals(action)
-                && Math.abs((nowTime.getTimeInMillis() - lastTime.getTimeInMillis())) / 1000 >= 60) {
+                    && Math.abs((nowTime.getTimeInMillis() - lastTime.getTimeInMillis())) / 1000 >= 60) {
                 lastTime = nowTime;
                 if (successUsers.size() < totalTicket && !successUsers.contains(user)) {
                     successUsers.add(user);
@@ -39,14 +39,14 @@ public class Woo1Q6 {
         }
 
         return successUsers.stream()
-            .sorted()
-            .toArray(String[]::new);
+                .sorted()
+                .toArray(String[]::new);
     }
 
     public static void main(String[] args) throws ParseException {
         Woo1Q6 woo1Q6 = new Woo1Q6();
-        String[] logs = new String[] {"woni request 09:12:29", "brown request 09:23:11", "brown leave 09:23:44",
-            "jason request 09:33:51", "jun request 09:33:56", "cu request 09:34:02"};
+        String[] logs = new String[]{"woni request 09:12:29", "brown request 09:23:11", "brown leave 09:23:44",
+                "jason request 09:33:51", "jun request 09:33:56", "cu request 09:34:02"};
         System.out.println(Arrays.toString(woo1Q6.solution(2000, logs)));
     }
 }

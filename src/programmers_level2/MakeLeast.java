@@ -21,8 +21,8 @@ public class MakeLeast {
     }
 
     public static void main(String[] args) {
-        int[] A = new int[] {1, 4, 2};
-        int[] B = new int[] {5, 4, 4};
+        int[] A = new int[]{1, 4, 2};
+        int[] B = new int[]{5, 4, 4};
         MakeLeast makeLeast = new MakeLeast();
         System.out.println(makeLeast.solution(A, B));
     }

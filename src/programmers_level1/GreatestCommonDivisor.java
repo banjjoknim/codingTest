@@ -12,6 +12,6 @@ public class GreatestCommonDivisor {
         }
         int gcd = n;
         int lcm = a * b / gcd; // least common multiple : 최소공배수
-        return new int[] {gcd, lcm};
+        return new int[]{gcd, lcm};
     }
 }

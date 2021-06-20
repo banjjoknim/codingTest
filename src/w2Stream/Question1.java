@@ -7,16 +7,16 @@ import java.util.Arrays;
 public class Question1 {
     public int solution(int[] restaurant, int[][] riders, int k) {
 
-        return (int)Arrays.stream(riders)
-            .mapToInt(rider -> calculateDistance(restaurant, rider))
-            .filter(item -> item <= k)
-            .count();
+        return (int) Arrays.stream(riders)
+                .mapToInt(rider -> calculateDistance(restaurant, rider))
+                .filter(item -> item <= k)
+                .count();
     }
 
     private int calculateDistance(int[] restaurant, int[] rider) {
-        return (int)Math.sqrt(
-            ((restaurant[0] - rider[0]) * (restaurant[0] - rider[0]) + (restaurant[1] - rider[1]) * (restaurant[1]
-                - rider[1])));
+        return (int) Math.sqrt(
+                ((restaurant[0] - rider[0]) * (restaurant[0] - rider[0]) + (restaurant[1] - rider[1]) * (restaurant[1]
+                        - rider[1])));
     }
 
 }

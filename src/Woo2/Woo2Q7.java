@@ -14,11 +14,11 @@ public class Woo2Q7 {
         List<String> friendList = new ArrayList<>();
         for (String[] relation : friends) {
             boolean check = Arrays.stream(relation)
-                .anyMatch(user::equals);
+                    .anyMatch(user::equals);
             if (check) {
                 Arrays.stream(relation)
-                    .findFirst()
-                    .ifPresent(name -> friendList.add(name));
+                        .findFirst()
+                        .ifPresent(name -> friendList.add(name));
             }
         }
 
@@ -26,13 +26,13 @@ public class Woo2Q7 {
         for (String[] relation : friends) {
             for (String name : friendList) {
                 boolean isFriendToFriend = Arrays.stream(relation)
-                    .anyMatch(name::equals);
+                        .anyMatch(name::equals);
                 if (isFriendToFriend) {
                     Arrays.stream(relation)
-                        .filter(item -> !item.equals(name))
-                        .filter(item -> !item.equals(user))
-                        .findFirst()
-                        .ifPresent(item -> friendToFriend.add(item));
+                            .filter(item -> !item.equals(name))
+                            .filter(item -> !item.equals(user))
+                            .findFirst()
+                            .ifPresent(item -> friendToFriend.add(item));
                 }
             }
         }
@@ -60,20 +60,20 @@ public class Woo2Q7 {
         }
 
         return users.stream()
-            .filter(info -> info.score != 0)
-            .filter(info -> !friendList.contains(info.name))
-            .sorted(new Comparator<User>() {
-                @Override
-                public int compare(User o1, User o2) {
-                    if (o1.score == o2.score) {
-                        return o1.name.compareTo(o2.name);
+                .filter(info -> info.score != 0)
+                .filter(info -> !friendList.contains(info.name))
+                .sorted(new Comparator<User>() {
+                    @Override
+                    public int compare(User o1, User o2) {
+                        if (o1.score == o2.score) {
+                            return o1.name.compareTo(o2.name);
+                        }
+                        return -(o1.score - o2.score);
                     }
-                    return -(o1.score - o2.score);
-                }
-            })
-            .map(info -> info.name)
-            .limit(5)
-            .toArray(String[]::new);
+                })
+                .map(info -> info.name)
+                .limit(5)
+                .toArray(String[]::new);
     }
 
     class User {
@@ -89,7 +89,7 @@ public class Woo2Q7 {
     public static void main(String[] args) {
         String user = "mrko";
         String[][] friends = {{"donut", "andole"}, {"donut", "jun"}, {"donut", "mrko"}, {"shakevan", "andole"},
-            {"shakevan", "jun"}, {"shakevan", "mrko"}, {"jun", "mrko"}, {"bedi", "jun"}};
+                {"shakevan", "jun"}, {"shakevan", "mrko"}, {"jun", "mrko"}, {"bedi", "jun"}};
         String[] visitors = {"bedi", "bedi", "donut", "bedi", "shakevan", "ji", "ji", "ji", "ji"};
         Woo2Q7 woo2Q7 = new Woo2Q7();
         System.out.println(Arrays.toString(woo2Q7.solution(user, friends, visitors)));

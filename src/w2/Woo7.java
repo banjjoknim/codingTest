@@ -144,7 +144,7 @@ public class Woo7 {
 
         String user = "mrko";
         String[][] friends = {{"donut", "andole"}, {"donut", "jun"}, {"donut", "mrko"}, {"shakevan", "andole"},
-            {"shakevan", "jun"}, {"shakevan", "mrko"}};
+                {"shakevan", "jun"}, {"shakevan", "mrko"}};
         String[] visitors = {"bedi", "bedi", "donut", "bedi", "shakevan"};
 
         Woo7 woo7 = new Woo7();

@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 public class SortNumber {
     public long solution(long n) {
         String temp = Arrays.stream(String.valueOf(n).split(""))
-            .mapToInt(Integer::parseInt)
-            .sorted()
-            .mapToObj(String::valueOf)
-            .collect(Collectors.joining());
+                .mapToInt(Integer::parseInt)
+                .sorted()
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining());
         StringBuilder sb = new StringBuilder(temp);
         sb.reverse();
         return Long.valueOf(String.valueOf(sb));

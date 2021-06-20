@@ -26,20 +26,20 @@ public class Question5 {
         Predicate<String> checkEquals5 = s -> s.split("\\.")[1].equals("5");
 
         if (Arrays.stream(history).anyMatch(eatAmount -> checkFirstNumber(eatAmount))) {
-            return new int[] {-1};
+            return new int[]{-1};
         }
         if (Arrays.stream(history).anyMatch(eatAmount -> checkSecondNumber(eatAmount))) {
-            return new int[] {-1};
+            return new int[]{-1};
         }
 
         for (int i = 0; i < history.length; i++) {
 
             int price = 0;
-            int requiredPigFoot = (int)(4 * Double.parseDouble(history[i]));
-            int requiredOnion = (int)(50 * Double.parseDouble(history[i]));
-            int requiredGreenOnion = (int)(10 * Double.parseDouble(history[i]));
-            int requiredGarlic = (int)(10 * Double.parseDouble(history[i]));
-            int requiredPepper = (int)(4 * Double.parseDouble(history[i]));
+            int requiredPigFoot = (int) (4 * Double.parseDouble(history[i]));
+            int requiredOnion = (int) (50 * Double.parseDouble(history[i]));
+            int requiredGreenOnion = (int) (10 * Double.parseDouble(history[i]));
+            int requiredGarlic = (int) (10 * Double.parseDouble(history[i]));
+            int requiredPepper = (int) (4 * Double.parseDouble(history[i]));
 
             if (checkEquals5.test(history[i])) {
                 requiredPepper = requiredPepper / 2;

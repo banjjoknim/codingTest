@@ -19,8 +19,8 @@ public class SortArrayDown {
         // return characters.stream().map(character -> String.valueOf(character)).collect(Collectors.joining());
 
         return Stream.of(s.split(""))
-            .sorted(Collections.reverseOrder())
-            .collect(Collectors.joining());
+                .sorted(Collections.reverseOrder())
+                .collect(Collectors.joining());
     }
 
     public static void main(String[] args) {

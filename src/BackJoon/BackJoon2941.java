@@ -12,14 +12,14 @@ public class BackJoon2941 {
     }
 
     private static String changeWord(String s) {
-        s = s.replaceAll("c=","C");
-        s = s.replaceAll("c-","D");
-        s = s.replaceAll("dz=","E");
-        s = s.replaceAll("d-","F");
-        s = s.replaceAll("lj","G");
-        s = s.replaceAll("nj","H");
-        s = s.replaceAll("s=","I");
-        s = s.replaceAll("z=","L");
+        s = s.replaceAll("c=", "C");
+        s = s.replaceAll("c-", "D");
+        s = s.replaceAll("dz=", "E");
+        s = s.replaceAll("d-", "F");
+        s = s.replaceAll("lj", "G");
+        s = s.replaceAll("nj", "H");
+        s = s.replaceAll("s=", "I");
+        s = s.replaceAll("z=", "L");
 
         return s;
     }

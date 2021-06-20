@@ -17,8 +17,8 @@ public class Woo3Q1 {
         map.put("D0", 3);
         map.put("F", 0);
         int sum = IntStream.range(0, grades.length)
-            .map(index -> map.get(grades[index]) * weights[index])
-            .sum();
+                .map(index -> map.get(grades[index]) * weights[index])
+                .sum();
 
         return sum - threshold;
     }

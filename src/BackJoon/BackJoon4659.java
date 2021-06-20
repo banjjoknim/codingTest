@@ -25,7 +25,7 @@ public class BackJoon4659 {
     }
 
     private static boolean isContain(String word) {
-        String[] aeiou = new String[] {"a", "e", "i", "o", "u"};
+        String[] aeiou = new String[]{"a", "e", "i", "o", "u"};
         for (String s : aeiou) {
             if (word.contains(s)) {
                 return true;
@@ -38,11 +38,11 @@ public class BackJoon4659 {
         List<String> aeiou = Arrays.asList("a", "e", "i", "o", "u");
         for (int i = 0; i < word.length() - 2; i++) {
             int countMoeum = (int) Arrays.stream(word.substring(i, i + 3).split(""))
-                .filter(w -> aeiou.contains(w))
-                .count();
+                    .filter(w -> aeiou.contains(w))
+                    .count();
             int countJaeum = (int) Arrays.stream(word.substring(i, i + 3).split(""))
-                .filter(w -> !aeiou.contains(w))
-                .count();
+                    .filter(w -> !aeiou.contains(w))
+                    .count();
             if (countMoeum == 3 || countJaeum == 3) {
                 return false;
             }

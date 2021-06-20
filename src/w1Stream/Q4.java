@@ -23,11 +23,11 @@ public class Q4 {
         for (int i = 0; i < 2; i++) {
             int pageSide = i;
             int addPobi = IntStream.range(0, String.valueOf(pobi[i]).length())
-                .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
-                .sum();
+                    .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
+                    .sum();
             int multiplePobi = IntStream.range(0, String.valueOf(pobi[i]).length())
-                .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
-                .reduce(1, (a, b) -> a * b);
+                    .map(index -> Integer.parseInt(Character.toString(String.valueOf(pobi[pageSide]).charAt(index))))
+                    .reduce(1, (a, b) -> a * b);
             if (multiplePobi >= addPobi && multiplePobi >= pobiScore) {
                 pobiScore = multiplePobi;
             }
@@ -36,11 +36,11 @@ public class Q4 {
             }
 
             int addCrong = IntStream.range(0, String.valueOf(pobi[i]).length())
-                .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
-                .sum();
+                    .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
+                    .sum();
             int multipleCrong = IntStream.range(0, String.valueOf(pobi[i]).length())
-                .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
-                .reduce(1, (a, b) -> a * b);
+                    .map(index -> Integer.parseInt(Character.toString(String.valueOf(crong[pageSide]).charAt(index))))
+                    .reduce(1, (a, b) -> a * b);
             if (multipleCrong >= addCrong && multipleCrong >= crongScore) {
                 crongScore = multipleCrong;
             }

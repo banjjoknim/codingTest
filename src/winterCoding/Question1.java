@@ -18,18 +18,18 @@ public class Question1 {
             }
             if (delivery[i][2] == 0) {
                 if (answer.getOrDefault(delivery[i][0], "d").equals("d") && answer.getOrDefault(delivery[i][1], "d")
-                    .equals("d")) {
+                        .equals("d")) {
                     answer.put(delivery[i][0], "X");
                     answer.put(delivery[i][1], "X");
                     continue;
                 }
                 if (answer.getOrDefault(delivery[i][0], "d").equals("O") && answer.getOrDefault(delivery[i][1], "d")
-                    .equals("?")) {
+                        .equals("?")) {
                     answer.put(delivery[i][1], "X");
                     continue;
                 }
                 if (answer.getOrDefault(delivery[i][1], "d").equals("O") && answer.getOrDefault(delivery[i][0], "d")
-                    .equals("?")) {
+                        .equals("?")) {
                     answer.put(delivery[i][0], "X");
                     continue;
                 }
@@ -61,7 +61,7 @@ public class Question1 {
 
     public static void main(String[] args) {
         int n = 7;
-        int[][] delivery = new int[][] {{5, 6, 0}, {1, 3, 1}, {1, 5, 0}, {7, 6, 0}, {3, 7, 1}, {2, 5, 0}};
+        int[][] delivery = new int[][]{{5, 6, 0}, {1, 3, 1}, {1, 5, 0}, {7, 6, 0}, {3, 7, 1}, {2, 5, 0}};
         Question1 question1 = new Question1();
         System.out.println(question1.solution(n, delivery));
     }

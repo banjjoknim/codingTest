@@ -25,7 +25,7 @@ public class SumOfTwoNumber {
         Set<Map.Entry<String, Integer>> entry = map.entrySet();
         Iterator<Integer> iterator = set.iterator();
         iterator.remove();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
         System.out.println(iterator.hasNext());

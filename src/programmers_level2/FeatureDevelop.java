@@ -40,13 +40,13 @@ public class FeatureDevelop {
     public int[] another(int[] progresses, int[] speeds) {
         int[] dayOfend = new int[100];
         int day = -1;
-        for(int i=0; i<progresses.length; i++) {
-            while(progresses[i] + (day*speeds[i]) < 100) {
+        for (int i = 0; i < progresses.length; i++) {
+            while (progresses[i] + (day * speeds[i]) < 100) {
                 day++;
             }
             dayOfend[day]++;
         }
-        return Arrays.stream(dayOfend).filter(i -> i!=0).toArray();
+        return Arrays.stream(dayOfend).filter(i -> i != 0).toArray();
     }
 
     public static void main(String[] args) {

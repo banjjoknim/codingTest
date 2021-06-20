@@ -18,8 +18,8 @@ public class Woo3Q5 {
         }
 
         return penter.concat(list.stream()
-            .collect(Collectors.joining()))
-            .concat(pexit);
+                .collect(Collectors.joining()))
+                .concat(pexit);
     }
 
     public static void main(String[] args) {

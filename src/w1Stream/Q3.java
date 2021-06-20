@@ -11,18 +11,18 @@ public class Q3 {
         List<String> answerList = new ArrayList<String>();
         char[] charArray = new char[26];
         char[] charArrayReverse = new char[26];
-        IntStream.range(0, 26).forEach(index -> charArray[index] = (char)('a' + index));
-        IntStream.range(0, 26).forEach(index -> charArrayReverse[index] = (char)('z' - index));
+        IntStream.range(0, 26).forEach(index -> charArray[index] = (char) ('a' + index));
+        IntStream.range(0, 26).forEach(index -> charArrayReverse[index] = (char) ('z' - index));
         for (int i = 0; i < word.split("").length; i++) {
             int nowIndex = i;
             IntStream.range(0, 26)
-                .filter(j -> Character.toLowerCase(word.charAt(nowIndex)) == charArray[j])
-                .filter(index -> word.charAt(nowIndex) <= 'Z')
-                .forEach(j -> answerList.add(nowIndex, String.valueOf(Character.toUpperCase(charArrayReverse[j]))));
+                    .filter(j -> Character.toLowerCase(word.charAt(nowIndex)) == charArray[j])
+                    .filter(index -> word.charAt(nowIndex) <= 'Z')
+                    .forEach(j -> answerList.add(nowIndex, String.valueOf(Character.toUpperCase(charArrayReverse[j]))));
             IntStream.range(0, 26)
-                .filter(j -> Character.toLowerCase(word.charAt(nowIndex)) == charArray[j])
-                .filter(index -> word.charAt(nowIndex) > 'Z')
-                .forEach(j -> answerList.add(nowIndex, String.valueOf(charArrayReverse[j])));
+                    .filter(j -> Character.toLowerCase(word.charAt(nowIndex)) == charArray[j])
+                    .filter(index -> word.charAt(nowIndex) > 'Z')
+                    .forEach(j -> answerList.add(nowIndex, String.valueOf(charArrayReverse[j])));
             if (word.split("")[i].equals(" ")) {
                 answerList.add(nowIndex, " ");
             }

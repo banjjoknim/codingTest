@@ -8,11 +8,11 @@ public class Woo1_3 {
 
         char[] alpabat = new char[26];
         for (int i = 0; i < alpabat.length; i++) {
-            alpabat[i] = (char)('a' + i);
+            alpabat[i] = (char) ('a' + i);
         }
         char[] reverseAlpabat = new char[26];
         for (int i = 0; i < reverseAlpabat.length; i++) {
-            reverseAlpabat[i] = (char)('z' - i);
+            reverseAlpabat[i] = (char) ('z' - i);
         }
         char[] charArray = word.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -25,7 +25,7 @@ public class Woo1_3 {
                 }
                 if (charArray[i] >= 65 && charArray[i] <= 90) {
                     if (Character.toLowerCase(charArray[i]) == alpabat[j]) {
-                        charArray[i] = (char)(reverseAlpabat[j] - 32);
+                        charArray[i] = (char) (reverseAlpabat[j] - 32);
                         break;
                     }
                 }

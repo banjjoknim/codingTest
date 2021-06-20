@@ -13,7 +13,7 @@ public class BackJoon2857 {
         for (int i = 0; i < 5; i++) {
             if (sc.next().contains("FBI")) {
                 exist = true;
-                System.out.print(i + 1+" ");
+                System.out.print(i + 1 + " ");
             }
         }
         if (!exist) {

@@ -11,7 +11,7 @@ public class StockPrice {
 
         for (int i = 0; i < prices.length; i++) {
             int price = prices[i];
-            if(check(prices, price, i)){
+            if (check(prices, price, i)) {
                 answer[i] = IntStream.range(i, prices.length)
                         .filter(index -> price > prices[index])
                         .findFirst()
@@ -27,7 +27,8 @@ public class StockPrice {
 
         return answer;
     }
-    boolean check(int[] prices, int price,  int i){
+
+    boolean check(int[] prices, int price, int i) {
         return IntStream.range(i, prices.length)
                 .filter(index -> price > prices[index])
                 .findFirst()

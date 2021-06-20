@@ -32,14 +32,14 @@ public class Question7 {
 
             int indexI = i;
             score += IntStream.range(0, friendToFriend.size())
-                .filter(index -> personList.get(indexI).equals(friendToFriend.get(index)))
-                .map(index -> 10)
-                .sum();
+                    .filter(index -> personList.get(indexI).equals(friendToFriend.get(index)))
+                    .map(index -> 10)
+                    .sum();
 
             score += IntStream.range(0, visitorList.size())
-                .filter(index -> personList.get(indexI).equals(visitorList.get(index)))
-                .map(index -> 1)
-                .sum();
+                    .filter(index -> personList.get(indexI).equals(visitorList.get(index)))
+                    .map(index -> 1)
+                    .sum();
 
             Person person = new Person();
             person.setScore(score);
@@ -49,8 +49,8 @@ public class Question7 {
         recommandList.removeAll(friendList);
         Collections.sort(recommandList, Collections.reverseOrder());
         answer = recommandList.stream()
-            .map(Person::getName)
-            .toArray(String[]::new);
+                .map(Person::getName)
+                .toArray(String[]::new);
         return answer;
     }
 
@@ -58,34 +58,34 @@ public class Question7 {
         for (int i = 0; i < friends.length; i++) {
             int indexI = i;
             IntStream.range(0, friendList.size())
-                .filter(index -> Arrays.asList(friends[indexI]).contains(friendList.get(index)))
-                .forEach(
-                    index -> Arrays.stream(friends[indexI])
-                        .filter(name -> !name.equals(friendList.get(index)))
-                        .forEach(name -> friendToFriend.add(name)));
+                    .filter(index -> Arrays.asList(friends[indexI]).contains(friendList.get(index)))
+                    .forEach(
+                            index -> Arrays.stream(friends[indexI])
+                                    .filter(name -> !name.equals(friendList.get(index)))
+                                    .forEach(name -> friendToFriend.add(name)));
         }
     }
 
     private void getPersonList(String user, String[][] friends, List<String> personList, String[] visitors) {
         IntStream.range(0, friends.length)
-            .mapToObj(index ->
-                friends[index]).forEach(array -> Arrays.stream(array)
-            .filter(name -> !name.equals(user))
-            .forEach(name -> {
-                if (!personList.contains(name)) {
-                    personList.add(name);
-                }
-            }));
+                .mapToObj(index ->
+                        friends[index]).forEach(array -> Arrays.stream(array)
+                .filter(name -> !name.equals(user))
+                .forEach(name -> {
+                    if (!personList.contains(name)) {
+                        personList.add(name);
+                    }
+                }));
         Arrays.stream(visitors).filter(name -> !personList.contains(name)).forEach(name -> personList.add(name));
     }
 
     private void getFriendList(String user, String[][] friends, List<String> friendList) {
         IntStream.range(0, friends.length)
-            .mapToObj(index -> friends[index])
-            .filter(array -> Arrays.asList(array).contains(user))
-            .forEach(array -> Arrays.stream(array)
-                .filter(name -> !name.equals(user))
-                .forEach(name -> friendList.add(name)));
+                .mapToObj(index -> friends[index])
+                .filter(array -> Arrays.asList(array).contains(user))
+                .forEach(array -> Arrays.stream(array)
+                        .filter(name -> !name.equals(user))
+                        .forEach(name -> friendList.add(name)));
     }
 
 }

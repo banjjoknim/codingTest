@@ -82,15 +82,15 @@ public class Woo1_4 {
             result = 2;
         }
         if ((pobi[1] - pobi[0]) != 1 || (crong[1] - crong[0]) != 1 || pobi[0] % 2 != 1 || pobi[1] % 2 != 0
-            || crong[0] % 2 != 1 || crong[1] % 2 != 0 || pobi.length != 2 || crong.length != 2) {
+                || crong[0] % 2 != 1 || crong[1] % 2 != 0 || pobi.length != 2 || crong.length != 2) {
             result = -1;
         }
         return result;
     }
 
     public static void main(String[] args) {
-        int[] pobi = new int[] {97, 98};
-        int[] crong = new int[] {197, 198};
+        int[] pobi = new int[]{97, 98};
+        int[] crong = new int[]{197, 198};
         Woo1_4 woo1_4 = new Woo1_4();
         int result = woo1_4.solution(pobi, crong);
         System.out.println(result);

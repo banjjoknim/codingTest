@@ -24,7 +24,7 @@ public class BackJoon1138 {
         }
 
         for (int number : list) {
-            System.out.print(number+" ");
+            System.out.print(number + " ");
         }
 
     }

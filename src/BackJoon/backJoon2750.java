@@ -13,8 +13,8 @@ public class backJoon2750 {
             list.add(scanner.nextInt());
         }
         list.stream()
-            .sorted()
-            .distinct()
-            .forEach(System.out::println);
+                .sorted()
+                .distinct()
+                .forEach(System.out::println);
     }
 }

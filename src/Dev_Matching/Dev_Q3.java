@@ -10,7 +10,7 @@ public class Dev_Q3 {
     public int solution(int n, int[][] groups) {
         int answer = 0;
         int[] array = new int[n];
-        turnOff(1,5, array);
+        turnOff(1, 5, array);
         System.out.println(Arrays.toString(array));
         return answer;
     }

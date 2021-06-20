@@ -33,7 +33,7 @@ public class GreatestNumber {
         Comparator<String> comparator = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                return -(o1+o2).compareTo(o2+o1);
+                return -(o1 + o2).compareTo(o2 + o1);
             }
         };
         String[] strings = new String[]{"300", "3"};

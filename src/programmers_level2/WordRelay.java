@@ -33,7 +33,7 @@ public class WordRelay {
             break;
         }
         if (size == words.length) {
-            return new int[] {0, 0};
+            return new int[]{0, 0};
         }
         answer[0] = numbers[(size + 1) % n];
         answer[1] = (int) Math.ceil((size + 1) / (double) n);

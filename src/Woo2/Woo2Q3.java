@@ -11,31 +11,31 @@ public class Woo2Q3 {
     public int solution(int[] prices, int[] discounts) {
         int answer = 0;
         List<Integer> priceList = Arrays.stream(prices)
-            .boxed()
-            .sorted(new Comparator<Integer>() {
-                @Override
-                public int compare(Integer o1, Integer o2) {
-                    return -o1 + o2;
-                }
-            })
-            .collect(Collectors.toList());
+                .boxed()
+                .sorted(new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return -o1 + o2;
+                    }
+                })
+                .collect(Collectors.toList());
         List<Integer> discountList = Arrays.stream(discounts)
-            .boxed()
-            .sorted(new Comparator<Integer>() {
-                @Override
-                public int compare(Integer o1, Integer o2) {
-                    return o2 - o1;
-                }
-            })
-            .collect(Collectors.toList());
+                .boxed()
+                .sorted(new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return o2 - o1;
+                    }
+                })
+                .collect(Collectors.toList());
 
         answer += IntStream.range(0, discountList.size())
-            .mapToDouble(index -> priceList.get(index) * (100 - discountList.get(index)) / 100)
-            .sum();
+                .mapToDouble(index -> priceList.get(index) * (100 - discountList.get(index)) / 100)
+                .sum();
         answer += IntStream.range(0, priceList.size())
-            .skip(discountList.size())
-            .map(index -> priceList.get(index))
-            .sum();
+                .skip(discountList.size())
+                .map(index -> priceList.get(index))
+                .sum();
 
         return answer;
     }

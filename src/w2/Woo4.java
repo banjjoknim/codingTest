@@ -33,7 +33,7 @@ public class Woo4 {
                 for (int j = 0; j < idList.size(); j++) {
 
                     if (actionList.get(i).split(" ")[1].equals(idList.get(j))
-                        && actionList.get(i).split(" ")[2].equals(passwordList.get(j))) {
+                            && actionList.get(i).split(" ")[2].equals(passwordList.get(j))) {
                         loginCheck = true;
                         answer[i] = true;
                         break;
@@ -64,7 +64,7 @@ public class Woo4 {
 
         String[] infos = {"kim password", "lee abc"};
         String[] actions = {"ADD 30", "LOGIN kim abc", "LOGIN lee password", "LOGIN kim password",
-            "LOGIN kim password", "ADD 30", "ORDER", "ORDER", "ADD 40", "ADD 50"};
+                "LOGIN kim password", "ADD 30", "ORDER", "ORDER", "ADD 40", "ADD 50"};
 
         boolean[] answer = new boolean[actions.length];
         Woo4 woo4 = new Woo4();

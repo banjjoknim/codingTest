@@ -17,10 +17,10 @@ public class Woo1Q7 {
         //     sb.append(word);
         //     continue;
         // }
-        
+
         cryptogram.chars()
-            .mapToObj(number -> (char) (number))
-            .forEach(word -> change(word, sb));
+                .mapToObj(number -> (char) (number))
+                .forEach(word -> change(word, sb));
 
         return sb.toString();
     }

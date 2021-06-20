@@ -12,12 +12,12 @@ class Question5Test {
     @CsvFileSource(resources = "woo5 - text_case.csv", delimiter = ':')
     public void test(String input, String expected) {
         String[] history = input.replaceAll("\\\"", "")
-            .replace("[", "")
-            .replace("]", " ")
-            .replaceAll(" ", "")
-            .split(",");
+                .replace("[", "")
+                .replace("]", " ")
+                .replaceAll(" ", "")
+                .split(",");
         int[] answer = Arrays.stream(expected.replace("[", "").replace("]", "").split(", "))
-            .mapToInt((item -> Integer.parseInt(item))).toArray();
+                .mapToInt((item -> Integer.parseInt(item))).toArray();
 
         Question5 question5 = new Question5();
         Assertions.assertArrayEquals(question5.solution(history), answer);

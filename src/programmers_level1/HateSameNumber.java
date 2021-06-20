@@ -37,10 +37,10 @@ public class HateSameNumber {
             }
             answer.add(arr[i]);
         }
-        
+
         return answer.stream()
-            .mapToInt(Integer::intValue)
-            .toArray();
+                .mapToInt(Integer::intValue)
+                .toArray();
     }
 
     public static void main(String[] args) {

@@ -23,9 +23,9 @@ class Solution {
         restrictions.add('.');
         restrictions.add('-');
         List<Character> characters = new_idChars.stream()
-            .filter(character -> restrictions.contains(character) || (character >= 'a' && character <= 'z') || (
-                character >= 48 && character <= 57))
-            .collect(Collectors.toList());
+                .filter(character -> restrictions.contains(character) || (character >= 'a' && character <= 'z') || (
+                        character >= 48 && character <= 57))
+                .collect(Collectors.toList());
         boolean check = true;
         while (check) {
             check = false;

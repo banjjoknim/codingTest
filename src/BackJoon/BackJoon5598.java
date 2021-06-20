@@ -14,7 +14,7 @@ public class BackJoon5598 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if ('A' <= s.charAt(i) && s.charAt(i) <= 'C') {
-                sb.append((char)(s.charAt(i)+'Z'-'A'-2));
+                sb.append((char) (s.charAt(i) + 'Z' - 'A' - 2));
                 continue;
             }
             sb.append((char) (s.charAt(i) - 3));

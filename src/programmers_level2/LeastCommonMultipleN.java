@@ -33,7 +33,7 @@ public class LeastCommonMultipleN {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,6,8,14};
+        int[] arr = {2, 6, 8, 14};
         LeastCommonMultipleN leastCommonMultipleN = new LeastCommonMultipleN();
         System.out.println(leastCommonMultipleN.solution(arr));
     }

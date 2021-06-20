@@ -16,7 +16,7 @@ public class BackJoon1977 {
                 min = number;
             }
         }
-        if(min == Integer.MAX_VALUE){
+        if (min == Integer.MAX_VALUE) {
             System.out.println(-1);
             return;
         }

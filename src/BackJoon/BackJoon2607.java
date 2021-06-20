@@ -32,7 +32,7 @@ public class BackJoon2607 {
             }
 
             if (Math.abs(original.values().stream().mapToInt(Integer::intValue).sum() -
-                other.values().stream().mapToInt(Integer::intValue).sum()) == 1) {
+                    other.values().stream().mapToInt(Integer::intValue).sum()) == 1) {
                 int diff = 0;
                 for (char c = 'A'; c <= 'Z'; c++) {
                     diff += Math.abs(original.get(c) - other.get(c));
@@ -42,9 +42,9 @@ public class BackJoon2607 {
                 }
             }
             if (original.values().stream().mapToInt(Integer::intValue).sum() == other.values()
-                .stream()
-                .mapToInt(Integer::intValue)
-                .sum()) {
+                    .stream()
+                    .mapToInt(Integer::intValue)
+                    .sum()) {
                 int diff = 0;
                 for (char c = 'A'; c <= 'Z'; c++) {
                     diff += Math.abs(original.get(c) - other.get(c));

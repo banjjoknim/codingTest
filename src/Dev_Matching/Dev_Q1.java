@@ -40,7 +40,7 @@ public class Dev_Q1 {
             index--;
             removeCarScore += cars.get(index).count;
         }
-        return cars.get(index+1).name;
+        return cars.get(index + 1).name;
     }
 
     class Car implements Comparable<Car> {

@@ -15,16 +15,16 @@ public class Question2 {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         List<Integer> timeList = new ArrayList<Integer>();
         Arrays.stream(logs.split("\n")).map(item -> item.split(" ")[1])
-            .forEach(log -> {
-                Calendar calendar = Calendar.getInstance();
-                try {
-                    calendar.setTime(sdf.parse(log));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                calendar.add(Calendar.HOUR_OF_DAY, 9);
-                timeList.add(calendar.get(Calendar.HOUR_OF_DAY));
-            });
+                .forEach(log -> {
+                    Calendar calendar = Calendar.getInstance();
+                    try {
+                        calendar.setTime(sdf.parse(log));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    calendar.add(Calendar.HOUR_OF_DAY, 9);
+                    timeList.add(calendar.get(Calendar.HOUR_OF_DAY));
+                });
         Arrays.stream(answer).forEach(item -> item = 0);
         timeList.stream().forEach(item -> answer[item] = answer[item] + 1);
 

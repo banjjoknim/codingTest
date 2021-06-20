@@ -21,14 +21,14 @@ public class BackJoon10804 {
         }
 
         for (int i = 0; i < 10; i++) {
-            int start = sc.nextInt()-1;
+            int start = sc.nextInt() - 1;
             int end = sc.nextInt();
             cards = reverseCard(cards, start, end);
         }
 
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < 20; i++) {
-            answer.append(map.get(cards.charAt(i))+" ");
+            answer.append(map.get(cards.charAt(i)) + " ");
         }
 
         System.out.println(answer.toString());

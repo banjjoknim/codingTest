@@ -27,10 +27,10 @@ public class Woo2Q5 {
             int price = 0;
             String[] input = history[i].split("\\.");
             if (Integer.valueOf(input[0]) != 1 && Integer.valueOf(input[0]) != 2) {
-                return new int[] {-1};
+                return new int[]{-1};
             }
             if (Integer.valueOf(input[1]) != 0 && Integer.valueOf(input[1]) != 5) {
-                return new int[] {-1};
+                return new int[]{-1};
             }
             double requiredPigFoot = Double.valueOf(history[i]) * REQUIRED_PIG_FOOT;
             double requiredOnion = Double.valueOf(history[i]) * REQUIRED_ONION;

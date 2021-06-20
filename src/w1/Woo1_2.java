@@ -16,9 +16,9 @@ public class Woo1_2 {
         // wells = new int[][] {{15, 15, 25, 25}, {40, 10, 50, 20}};
         // point = new int[] {10, 10, 30, 30};
 
-        lands = new int[][] {{0, 0, 20, 10}, {10, 20, 20, 40}, {30, 0, 50, 20}};
-        wells = new int[][] {{20, 40, 30, 50}, {30, 20, 50, 30}};
-        point = new int[] {20, 30, 30, 40};
+        lands = new int[][]{{0, 0, 20, 10}, {10, 20, 20, 40}, {30, 0, 50, 20}};
+        wells = new int[][]{{20, 40, 30, 50}, {30, 20, 50, 30}};
+        point = new int[]{20, 30, 30, 40};
 
         List<Integer> pointX = new ArrayList<Integer>();
         List<Integer> pointY = new ArrayList<Integer>();
@@ -95,6 +95,6 @@ public class Woo1_2 {
 
     public static void main(String[] args) {
         Woo1_2 woo1_2 = new Woo1_2();
-        System.out.println(woo1_2.solution(new int[] {10, 10, 30, 30}));
+        System.out.println(woo1_2.solution(new int[]{10, 10, 30, 30}));
     }
 }

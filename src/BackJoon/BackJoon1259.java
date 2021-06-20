@@ -12,10 +12,10 @@ public class BackJoon1259 {
 
         while (true) {
             int number = sc.nextInt();
-            if (number == 0){
+            if (number == 0) {
                 break;
             }
-                StringBuilder sb = new StringBuilder(String.valueOf(number));
+            StringBuilder sb = new StringBuilder(String.valueOf(number));
             String origin = sb.toString();
             sb.reverse();
             String modified = String.valueOf(Integer.valueOf(sb.toString()));

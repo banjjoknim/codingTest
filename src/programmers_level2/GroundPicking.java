@@ -16,12 +16,12 @@ public class GroundPicking {
         }
 
         return Arrays.stream(land[land.length - 1])
-            .max()
-            .getAsInt();
+                .max()
+                .getAsInt();
     }
 
     public static void main(String[] args) {
-        int[][] land = new int[][] {{1, 2, 3, 5}, {5, 6, 7, 8}, {4, 3, 2, 1}};
+        int[][] land = new int[][]{{1, 2, 3, 5}, {5, 6, 7, 8}, {4, 3, 2, 1}};
         GroundPicking groundPicking = new GroundPicking();
         System.out.println(groundPicking.solution(land));
     }

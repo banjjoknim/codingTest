@@ -17,16 +17,16 @@ public class Q6 {
             if (logs[i].contains("request")) {
                 int now = i;
                 boolean requestCheck = IntStream.range(0, now)
-                    .filter(index -> logs[index].contains("request"))
-                    .noneMatch(index -> diffSecondsLowerThan60(logs[now], logs[index]));
+                        .filter(index -> logs[index].contains("request"))
+                        .noneMatch(index -> diffSecondsLowerThan60(logs[now], logs[index]));
                 if (requestCheck) {
                     list.add(logs[i].split(" ")[0]);
                 }
             }
         }
         Arrays.stream(logs)
-            .filter(log -> log.contains("leave"))
-            .forEach(log -> list.remove(log.split(" ")[0]));
+                .filter(log -> log.contains("leave"))
+                .forEach(log -> list.remove(log.split(" ")[0]));
         Collections.sort(list);
         answer = list.toArray(new String[list.size()]);
         return answer;

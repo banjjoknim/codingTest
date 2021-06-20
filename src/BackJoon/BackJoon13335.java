@@ -38,8 +38,8 @@ public class BackJoon13335 {
             }
 
             int totalWeight = bridge.stream()
-                .mapToInt(Truck::getWeight)
-                .sum();
+                    .mapToInt(Truck::getWeight)
+                    .sum();
             if (trucks.get(0).weight <= L - totalWeight) {
                 Truck truck = trucks.remove(0);
                 bridge.offer(truck);

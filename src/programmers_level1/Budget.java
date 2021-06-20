@@ -21,7 +21,7 @@ public class Budget {
     }
 
     public static void main(String[] args) {
-        int[] d = {2,2,3,3};
+        int[] d = {2, 2, 3, 3};
         int budget = 10;
         Budget budget1 = new Budget();
         System.out.println(budget1.solution(d, budget));

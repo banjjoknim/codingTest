@@ -9,11 +9,11 @@ public class Woo3Q2 {
         String[] strings = s.split("");
         for (int i = 0; i < strings.length - 1; i++) {
             String s1 = Arrays.stream(strings)
-                .limit(i + 1)
-                .collect(Collectors.joining());
+                    .limit(i + 1)
+                    .collect(Collectors.joining());
             String s2 = Arrays.stream(strings)
-                .skip(i + 1)
-                .collect(Collectors.joining());
+                    .skip(i + 1)
+                    .collect(Collectors.joining());
 
             if ("+".equals(op)) {
                 answer[i] = Long.valueOf(s1) + Long.valueOf(s2);

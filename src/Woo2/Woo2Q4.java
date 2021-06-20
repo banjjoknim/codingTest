@@ -58,15 +58,15 @@ public class Woo2Q4 {
     public static void main(String[] args) {
         String[] infos = {"kim password", "lee abc"};
         String[] actions = {"ADD 30",
-            "LOGIN kim abc",
-            "LOGIN lee password",
-            "LOGIN kim password",
-            "LOGIN kim password",
-            "ADD 30",
-            "ORDER",
-            "ORDER",
-            "ADD 40",
-            "ADD 50"};
+                "LOGIN kim abc",
+                "LOGIN lee password",
+                "LOGIN kim password",
+                "LOGIN kim password",
+                "ADD 30",
+                "ORDER",
+                "ORDER",
+                "ADD 40",
+                "ADD 50"};
         Woo2Q4 woo2Q4 = new Woo2Q4();
         System.out.println(Arrays.toString(woo2Q4.solution(infos, actions)));
     }

@@ -14,7 +14,7 @@ public class BackJoon2839 {
             n = n - 3;
             count++;
             // 끝까지 멈추지 않으면 딱 맞게 배달불가능
-            if(n < 0){
+            if (n < 0) {
                 System.out.println(-1);
                 return;
             }

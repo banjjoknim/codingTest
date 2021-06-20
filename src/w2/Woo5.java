@@ -34,39 +34,39 @@ public class Woo5 {
         for (int i = 0; i < history.length; i++) {
             int amount = 0;
             if (Integer.parseInt((history[i].split("\\.")[1])) == 0
-                || Integer.parseInt((history[i].split("\\.")[1])) == 5) {
+                    || Integer.parseInt((history[i].split("\\.")[1])) == 5) {
             } else {
-                return new int[] {-1};
+                return new int[]{-1};
             }
             if (Integer.parseInt((history[i].split("\\.")[0])) == 1
-                || Integer.parseInt((history[i].split("\\.")[0])) == 2) {
+                    || Integer.parseInt((history[i].split("\\.")[0])) == 2) {
             } else {
-                return new int[] {-1};
+                return new int[]{-1};
             }
 
             while (porkFeet < requiredPorkFeet * Double.parseDouble(history[i])) {
                 porkFeet = porkFeet + 10;
                 amount = amount + porkFeetPrice;
             }
-            porkFeet = porkFeet - (int)(requiredPorkFeet * Double.parseDouble(history[i]));
+            porkFeet = porkFeet - (int) (requiredPorkFeet * Double.parseDouble(history[i]));
 
             while (onion < requiredOnion * Double.parseDouble(history[i])) {
                 onion = onion + 100;
                 amount = amount + onionPrice;
             }
-            onion = onion - (int)(requiredOnion * Double.parseDouble(history[i]));
+            onion = onion - (int) (requiredOnion * Double.parseDouble(history[i]));
 
             while (greenOnion < requiredGreenOnion * Double.parseDouble(history[i])) {
                 greenOnion = greenOnion + 30;
                 amount = amount + greenOnionPrice;
             }
-            greenOnion = greenOnion - (int)(requiredGreenOnion * Double.parseDouble(history[i]));
+            greenOnion = greenOnion - (int) (requiredGreenOnion * Double.parseDouble(history[i]));
 
             while (garlic < requiredGarlic * Double.parseDouble(history[i])) {
                 garlic = garlic + 50;
                 amount = amount + garlicPrice;
             }
-            garlic = garlic - (int)(requiredGarlic * Double.parseDouble(history[i]));
+            garlic = garlic - (int) (requiredGarlic * Double.parseDouble(history[i]));
 
             if (Integer.parseInt((history[i].split("\\.")[1])) == 5) {
                 requiredPepper = 2;
@@ -74,11 +74,11 @@ public class Woo5 {
                 requiredPepper = 4;
             }
 
-            while (pepper < (int)(requiredPepper * Double.parseDouble(history[i]))) {
+            while (pepper < (int) (requiredPepper * Double.parseDouble(history[i]))) {
                 pepper = pepper + 10;
                 amount = amount + pepperPrice;
             }
-            pepper = pepper - (int)(requiredPepper * Double.parseDouble(history[i]));
+            pepper = pepper - (int) (requiredPepper * Double.parseDouble(history[i]));
 
             answer[i] = amount;
         }
@@ -89,7 +89,7 @@ public class Woo5 {
 
     public static void main(String[] args) {
         Woo5 woo5 = new Woo5();
-        String[] history = new String[] {"1.5", "2.0", "1.0"};
+        String[] history = new String[]{"1.5", "2.0", "1.0"};
         int[] answer = woo5.solution(history);
         for (int i = 0; i < history.length; i++) {
             System.out.print(answer[i] + " ");

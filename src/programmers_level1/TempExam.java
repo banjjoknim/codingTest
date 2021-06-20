@@ -70,6 +70,6 @@ public class TempExam {
 
     public static void main(String[] args) {
         TempExam tempExam = new TempExam();
-        Arrays.stream(tempExam.solution(new int[] {1, 3, 2, 4, 2})).forEach(System.out::print);
+        Arrays.stream(tempExam.solution(new int[]{1, 3, 2, 4, 2})).forEach(System.out::print);
     }
 }

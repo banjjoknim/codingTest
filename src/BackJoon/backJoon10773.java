@@ -21,7 +21,7 @@ public class backJoon10773 {
             }
         }
         System.out.println(numbers.stream()
-            .mapToInt(number -> number)
-            .sum());
+                .mapToInt(number -> number)
+                .sum());
     }
 }

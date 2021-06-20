@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class HashadNumber {
     public boolean solution(int x) {
         return x % Arrays.stream(String.valueOf(x).split(""))
-            .mapToInt(Integer::parseInt)
-            .sum() == 0;
+                .mapToInt(Integer::parseInt)
+                .sum() == 0;
     }
 }

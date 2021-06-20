@@ -34,7 +34,7 @@ public class backJoon1966 {
 
         while (true) {
             boolean check = queue.stream()
-                .anyMatch(importance -> importance > queue.peek());
+                    .anyMatch(importance -> importance > queue.peek());
             if (check) {
                 queue.offer(queue.poll());
                 if (targetPosition == 0) {

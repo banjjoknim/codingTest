@@ -27,7 +27,7 @@ public class FailureRate {
             }
             double failureRate = 1.0 - (clearPeople / totalPeople);
             failures.add(new Failure(stageNumber, failureRate));
-            System.out.println(stageNumber+" : "+failureRate);
+            System.out.println(stageNumber + " : " + failureRate);
         }
         Collections.sort(failures);
         return failures.stream()

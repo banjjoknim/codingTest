@@ -8,9 +8,9 @@ public class PhoneNumberHide {
     public String solution(String phone_number) {
         int length = phone_number.length();
         return Arrays.stream(phone_number.split(""))
-            .limit(length - 4)
-            .map(number -> "*")
-            .collect(Collectors.joining()).concat(phone_number.substring(length - 4, length));
+                .limit(length - 4)
+                .map(number -> "*")
+                .collect(Collectors.joining()).concat(phone_number.substring(length - 4, length));
     }
 
 }

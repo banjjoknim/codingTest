@@ -28,10 +28,10 @@ public class Spy {
         // 모두 다 안입는 경우는 존재하지 않으므로 -1
         // return answer - 1;
         return Arrays.stream(clothes)
-            .collect(groupingBy(p -> p[1], mapping(p -> p[0], counting())))
-            .values()
-            .stream()
-            .collect(reducing(1L, (x, y) -> x * (y + 1))).intValue() - 1;
+                .collect(groupingBy(p -> p[1], mapping(p -> p[0], counting())))
+                .values()
+                .stream()
+                .collect(reducing(1L, (x, y) -> x * (y + 1))).intValue() - 1;
 
     }
 
@@ -55,18 +55,18 @@ public class Spy {
     }
 
     public static void main(String[] args) {
-        String[][] clothes = new String[][] {{"asd", "1"}, {"asdasd", "1"}, {"alksmd", "2"}};
+        String[][] clothes = new String[][]{{"asd", "1"}, {"asdasd", "1"}, {"alksmd", "2"}};
         int answer = Arrays.stream(clothes)
-            .collect(groupingBy(cloth -> cloth[1], mapping(cloth -> cloth[0], counting())))
-            .values()
-            .stream()
-            .reduce(1L, (x, y) -> x * (y + 1))
-            .intValue() - 1;
+                .collect(groupingBy(cloth -> cloth[1], mapping(cloth -> cloth[0], counting())))
+                .values()
+                .stream()
+                .reduce(1L, (x, y) -> x * (y + 1))
+                .intValue() - 1;
         System.out.println(answer);
         System.out.println(
-            Arrays.stream(clothes)
-                .map(cloth -> new Cloth(cloth[0], cloth[1]))
-                .collect(Collectors.partitioningBy(cloth -> cloth.getCategory().equals("1")))
+                Arrays.stream(clothes)
+                        .map(cloth -> new Cloth(cloth[0], cloth[1]))
+                        .collect(Collectors.partitioningBy(cloth -> cloth.getCategory().equals("1")))
         );
     }
 }
