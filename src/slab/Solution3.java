@@ -13,6 +13,7 @@ class Solution3 {
                     numbers.add(number);
                 }
             }
+//            System.out.println(numbers);
             return numbers;
         }
 
@@ -24,6 +25,31 @@ class Solution3 {
             }
             return true;
         }
+    }
+
+    void getChe(int N) {
+        int[] arr = new int[N + 1];
+
+        // 입력받은 수 만큼 배열에 모두 초기화 해둔다
+        for (int i = 2; i <= N; i++) {
+            arr[i] = i;
+        }
+
+        for (int i = 2; i <= Math.sqrt(N); i++) {
+            if (arr[i] == 0) { // 이미 체크된 수의 배수는 확인하지 않는다
+                continue;
+            }
+            for (int j = i + i; j <= N; j += i) { // i를 제외한 i의 배수들은 0으로 체크
+                arr[j] = 0;
+            }
+        }
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 2; i <= N; i++) {
+            if (arr[i] != 0) {
+                numbers.add(i);
+            }
+        }
+//        System.out.println(numbers);
     }
 
     private static class Counter {
@@ -57,8 +83,16 @@ class Solution3 {
 
     public static void main(String[] args) {
         Solution3 solution = new Solution3();
-        int N = 20;
-        int M = 36;
+        int N = 5000000;
+        int M = 83;
+        long start = System.currentTimeMillis();
         System.out.println(solution.solution(N, M));
+        long end = System.currentTimeMillis();
+        System.out.println((end - start) / 1000.0);
+
+        start = System.currentTimeMillis();
+        solution.getChe(N);
+        end = System.currentTimeMillis();
+        System.out.println((end - start) / 1000.0);
     }
 }
